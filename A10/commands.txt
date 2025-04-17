@@ -1,0 +1,14 @@
+docker compose up -d
+docker exec -it cassandra-seed cqlsh
+
+docker exec -it cassandra-node1 cqlsh
+docker exec -it cassandra-node2 cqlsh
+
+DESCRIBE KEYSPACES;
+USE weather_data;
+
+DESCRIBE TABLES;
+DESCRIBE TABLE temperature_readings;
+
+USE weather_data;
+SELECT * FROM temperature_readings;
